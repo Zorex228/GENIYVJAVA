@@ -1,0 +1,37 @@
+package lab4;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Main {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Windows");
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Jpanel <nazvanie>
+        JPanel primary = new JPanel();
+        // Cvet zandego fona i razmer
+        primary.setBackground(Color.magenta);
+        primary.setPreferredSize(new Dimension(250,75));
+        //Vivodit soobsheniya
+        JLabel label1 = new JLabel("Sup dude");
+        primary.add(label1);
+        // Lepin na panel?
+        frame.getContentPane().add(primary);
+        frame.pack();
+        // sdelat videmim
+        frame.setVisible(true);
+
+        JTextArea jta1 = new JTextArea(100,25);
+        JButton jbutton = new JButton("TIKAY DYDY OR TETYA");
+        jbutton.setSize(100,100);
+        jbutton.setLayout(new FlowLayout());
+        jta1.add(jbutton);
+        jbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String txt = JOptionPane.showInputDialog(1,"SUDDAAAAAA");
+                jta1.append(txt);
+            }
+        });
+        frame.getContentPane().add(jta1);
